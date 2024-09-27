@@ -5,24 +5,24 @@ plugins {
     id 'org.jetbrains.kotlin.android' version '2.0.0' apply false
 }
 
-subprojects {
-    afterEvaluate { project ->
-        if (project.plugins.hasPlugin('com.android.application') || project.plugins.hasPlugin('com.android.library')) {
-            project.android {
-                compileOptions {
-                    sourceCompatibility = JavaVersion.VERSION_1_8
-                    targetCompatibility = JavaVersion.VERSION_1_8
-                }
-            }
-        }
-
-        project.tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
-            kotlinOptions {
-                jvmTarget = "1.8"  // Ensure Kotlin JVM target matches Java
-            }
-        }
-    }
-}
+//subprojects {
+//    afterEvaluate { project ->
+//        if (project.plugins.hasPlugin('com.android.application') || project.plugins.hasPlugin('com.android.library')) {
+//            project.android {
+//                compileOptions {
+//                    sourceCompatibility = JavaVersion.VERSION_1_8
+//                    targetCompatibility = JavaVersion.VERSION_1_8
+//                }
+//            }
+//        }
+//
+//        project.tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
+//            kotlinOptions {
+//                jvmTarget = "1.8"  // Ensure Kotlin JVM target matches Java
+//            }
+//        }
+//    }
+//}
 
 task clean(type: Delete) {
     delete rootProject.buildDir
