@@ -81,7 +81,15 @@ pub fn build(env: &BuildEnv, out: &Path) -> Result<()> {
                 id 'com.android.application'
                 id 'org.jetbrains.kotlin.android'
             }}
+            kotlin {{
+                jvmTarget = "17"  // Ensure this matches the Java version
+                jvmToolchain 17
+            }}
             android {{
+                compileOptions {{
+                    sourceCompatibility = 17
+                    targetCompatibility = 17
+                }}
                 namespace '{package}'
                 compileSdk {target_sdk}
                 defaultConfig {{
