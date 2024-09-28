@@ -77,17 +77,20 @@ pub fn build(env: &BuildEnv, out: &Path) -> Result<()> {
 
     let app_build_gradle = format!(
         r#"
+            import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
             plugins {{
                 id 'com.android.application'
                 id 'org.jetbrains.kotlin.android'
             }}
+            tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {{
+                kotlinOptions {{
+                    jvmTarget = "17"
+                }}
+            }}
             android {{
                 compileOptions {{
-                    sourceCompatibility JavaVersion.VERSION_17
-                    targetCompatibility JavaVersion.VERSION_17
-                }}
-                kotlin {{
-                    jvmToolchain(17)
+                    sourceCompatibility = JavaVersion.VERSION_17
+                    targetCompatibility = JavaVersion.VERSION_17
                 }}
                 namespace '{package}'
                 compileSdk {target_sdk}
