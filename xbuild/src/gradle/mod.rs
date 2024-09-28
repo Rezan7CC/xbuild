@@ -189,6 +189,7 @@ pub fn build(env: &BuildEnv, out: &Path) -> Result<()> {
         Format::Apk => "assemble",
         _ => unreachable!(),
     });
+    cmd.arg("--debug");
     cmd.arg("--warning-mode").arg("all");
     task::run(cmd, true)?;
     let output = gradle
