@@ -932,7 +932,9 @@ impl Chunk {
                                 break;
                             }
                         }
-                        let s = String::from_utf16(unsafe { std::mem::transmute::<&[u16], &[u16]>(buf.as_slice()) })?;
+                        let s = String::from_utf16(unsafe {
+                            std::mem::transmute::<&[u16], &[u16]>(buf.as_slice())
+                        })?;
                         strings.push(s);
                     }
                 }
