@@ -88,7 +88,7 @@ pub fn build(env: &BuildEnv, out: &Path) -> Result<()> {
                 }}
             }}
             android {{
-                ndkVersion = "21.4.7075529"
+                ndkVersion = "27.1.12297006"
                 compileOptions {{
                     sourceCompatibility = JavaVersion.VERSION_17
                     targetCompatibility = JavaVersion.VERSION_17
