@@ -191,7 +191,7 @@ impl WorkItem {
 }
 
 impl WorkItem {
-    const ORG: &'static str = "rust-mobile";
+    const ORG: &'static str = "Rezan7CC";
     const REPO: &'static str = "xbuild";
     const VERSION: &'static str = "v0.1.0+3";
 
