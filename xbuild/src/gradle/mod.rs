@@ -83,11 +83,11 @@ pub fn build(env: &BuildEnv, out: &Path) -> Result<()> {
             }}
             android {{
                 compileOptions {{
-                    sourceCompatibility = 17
-                    targetCompatibility = 17
+                    sourceCompatibility JavaVersion.VERSION_17
+                    targetCompatibility JavaVersion.VERSION_17
                 }}
-                kotlinOptions {{
-                    jvmTarget = "17"
+                kotlin {{
+                    jvmToolchain(17)
                 }}
                 namespace '{package}'
                 compileSdk {target_sdk}
